@@ -1,0 +1,105 @@
+body {
+    background: #1c1c1c;
+    overflow-y: hidden;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+    -o-user-select:none;
+    margin: 0;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior-y: none;
+
+    &:after {
+        animation: grain 6s steps(10) infinite;
+        background-image: url('./assets/grain.png');
+        background-repeat: repeat;
+        content: '';
+        height: 300%;
+        left: -100%;
+        opacity: .01;
+        pointer-events: none;
+        position: fixed;
+        top: -100%;
+        transition: opacity 0.1s ease;
+        width: 300%;
+        will-change: transform;
+        z-index: 3;
+    }
+
+    input,button,.btn {
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+
+    .app {
+        max-width: 1600px;
+        width: 90vw;
+        height: 82vh;
+        margin: 5vh auto;
+        -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.8);
+        border-radius: 12px 12px 0 0;
+
+        .main {
+            border-radius: 12px;
+
+            .menu-wrapper {
+                border-radius:0;
+            }
+        }
+
+        &.login {
+            max-width: 100vw;
+            width:100vw;
+            margin: 0 auto;
+            height: 100vh;
+        }
+    }
+}
+
+@keyframes slide-top {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-80px);
+    }
+}
+
+@keyframes mushroom-bottom {
+    0% {
+        height:60px;
+    }
+    100% {
+        height: 120px;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes grain {
+	0% { transform: translate(20%, -15%) }
+	10% { transform: translate(-20%, -15%) }
+	20% { transform: translate(20%, -5%) }
+	30% { transform: translate(-20%, -5%) }
+	40% { transform: translate(20%, 5%) }
+	50% { transform: translate(-20%, 5%) }
+	60% { transform: translate(20%, 15%) }
+	70% { transform: translate(-20%, 15%) }
+	80% { transform: translate(20%, 5%) }
+	90% { transform: translate(-20%, 5%) }
+	100% { transform: translate(20%, -5%) }
+}
